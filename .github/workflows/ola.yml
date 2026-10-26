@@ -1,4 +1,3 @@
-
 name: Ola
 
 on:
@@ -11,14 +10,11 @@ jobs:
 
     steps:
       - name: Saudacao
-        env:
-          USUARIO: ${{ github.actor }}
-          EVENTO: ${{ github.event_name }}
         run: |
-          echo "Ola, usuario $USUARIO!"
-          echo "Evento: $EVENTO"
+          echo "Ola, usuario ${{ github.actor }}!"
+          echo "Evento: ${{ github.event_name }}"
 
-      - name: Sistema operacional do runner
+      - name: Sistema operacional
         run: echo "Sistema operacional: $RUNNER_OS"
 
       - name: Versao do Python

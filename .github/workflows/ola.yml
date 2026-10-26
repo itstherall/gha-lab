@@ -1,0 +1,25 @@
+
+name: Ola
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  saudacao:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Saudacao
+        env:
+          USUARIO: ${{ github.actor }}
+          EVENTO: ${{ github.event_name }}
+        run: |
+          echo "Ola, usuario $USUARIO!"
+          echo "Evento: $EVENTO"
+
+      - name: Sistema operacional do runner
+        run: echo "Sistema operacional: $RUNNER_OS"
+
+      - name: Versao do Python
+        run: python --version
